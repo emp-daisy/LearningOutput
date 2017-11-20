@@ -5,22 +5,22 @@ export let wordCount = (str) => {
     return "Invalid input";
   } else {
     let result = {};
-    let strArr = str.split(' ').map(s => s.trim().toLowerCase());
+    let strArr = str.split(' ')
+      //converts all to lowercases and removes trailing spaces
+      .map(s => s.trim().toLowerCase())
+      //removes empty strings
+      .filter(s => s !== '');
 
-    for (let i = 0; i < strArr.length; i++) {
-      //Looping througt the words
-      if (strArr[i] !== '') {
-        //check that the word isn't an empty string
-
-        if (result[strArr[i]] === undefined) {
-          //check if the key doesn't exists in the dictionary and initialize
-          result[strArr[i]] = 1;
-        } else {
-          //if key exists increment
-          result[strArr[i]] += 1;
-        }
+    strArr.forEach(x => {
+      if (result[x] === undefined) {
+        //check if the key doesn't exists in the dictionary and initialize
+        result[x] = 1;
+      } else {
+        //if key exists increment
+        result[x] += 1;
       }
-    }
+    });
+
     return result;
   }
 }
