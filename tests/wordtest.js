@@ -23,7 +23,7 @@ describe('wordcount', function () {
                 'free': 1
             });
         });
-        it('should return an object with all lowercases', function () {
+        it('should return an object with lowercase keys', function () {
             assert.deepEqual(wordCount("olly   oLLy in come FRee"), {
                 'olly': 2,
                 'in': 1,
