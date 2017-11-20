@@ -24,7 +24,3 @@ export let wordCount = (str) => {
     return result;
   }
 }
-
-
-
-//console.log(wordCount("olly olly in come free"));

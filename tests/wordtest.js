@@ -7,7 +7,7 @@ import {
 
 describe('wordcount', function () {
     describe('valid input', function () {
-        it('should return a dictionary with the words and their count values', function () {
+        it('should return an object with the words and their count values', function () {
             assert.deepEqual(wordCount("olly olly in come free"), {
                 'olly': 2,
                 'in': 1,
@@ -15,7 +15,7 @@ describe('wordcount', function () {
                 'free': 1
             });
         });
-        it('should return a dictionary without space key', function () {
+        it('should return an object without space key', function () {
             assert.deepEqual(wordCount("olly   olly in come free"), {
                 'olly': 2,
                 'in': 1,
@@ -23,7 +23,7 @@ describe('wordcount', function () {
                 'free': 1
             });
         });
-        it('should return a dictionary with all lowercases', function () {
+        it('should return an object with all lowercases', function () {
             assert.deepEqual(wordCount("olly   oLLy in come FRee"), {
                 'olly': 2,
                 'in': 1,
@@ -34,11 +34,11 @@ describe('wordcount', function () {
     });
 
     describe('Non-String invalid input', function () {
-        it('should return a an error message', function () {
+        it('should return an error message', function () {
             assert.deepEqual(wordCount(123145), "Invalid input");
         });
 
-        it('should return a an error message', function () {
+        it('should return an error message', function () {
             assert.deepEqual(wordCount(new Object()), "Invalid input");
         });
 
@@ -46,16 +46,16 @@ describe('wordcount', function () {
             assert.deepEqual(wordCount([12, 31, 45]), "Invalid input");
         });
 
-        it('should return a an error message', function () {
+        it('should return an error message', function () {
             assert.deepEqual(wordCount({
                 'key': 123145
             }), "Invalid input");
         });
 
-        it('should return a an error message', function () {
+        it('should return an error message', function () {
             assert.deepEqual(wordCount(true), "Invalid input");
         });
-        it('should return a an error message', function () {
+        it('should return an error message', function () {
             assert.deepEqual(wordCount(), "Invalid input");
         });
     });
